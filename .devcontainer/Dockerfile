@@ -29,3 +29,6 @@ RUN curl --proto '=https' --tlsv1.2 -LsSf https://github.com/leptos-rs/cargo-lep
 
 # WASM出力のためのものを入れる
 RUN rustup target add wasm32-unknown-unknown
+
+WORKDIR /workspace 
+COPY . . 
