@@ -1,6 +1,6 @@
 version: '3'
 services:
-  playground:
+  utakata-research:
     container_name: 'utakata-research'
     hostname: 'utakata'
     build: .
