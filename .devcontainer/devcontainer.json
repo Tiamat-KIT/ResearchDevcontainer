@@ -1,5 +1,6 @@
 {
   "name": "utakata-research",
+  "service": "utakata-research",
   "dockerComposeFile": "docker-compose.yml",
   "workspaceFolder": "./workspace",
   "remoteUser": "utakata",
