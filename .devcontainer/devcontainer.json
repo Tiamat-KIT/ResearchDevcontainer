@@ -5,11 +5,8 @@
   "workspaceFolder": "C:\\Users\\taito\\Documents\\leptos-devdocker\\workspace",
   "mounts": ["source=C:\\Users\\taito\\Documents\\leptos-devdocker\\workspace,target=.\\workspace,type=bind,consistency=cached"],
   "remoteUser": "utakata",
-  // Configure tool-specific properties.
   "customizations": {
-    // Configure properties specific to VS Code.
     "vscode": {
-      // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
         "EditorConfig.EditorConfig",
         "rust-lang.rust-analyzer"
