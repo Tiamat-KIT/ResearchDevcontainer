@@ -2,7 +2,7 @@
   "name": "utakata-research",
   "service": "utakata-research",
   "dockerComposeFile": ["./docker-compose.yml"],
-  "workspaceFolder": "./workspace",
+  "workspaceFolder": ".\\workspace",
   "mounts": ["source=C:\\Users\\taito\\Documents\\leptos-devdocker\\workspace,target=.\\workspace,type=bind,consistency=cached"],
   "remoteUser": "utakata",
   // Configure tool-specific properties.
