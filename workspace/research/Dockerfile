@@ -1,5 +1,5 @@
 # Get started with a build env with Rust nightly
-FROM rust:alpine3.18 AS builder
+FROM rust:latest AS builder
 WORKDIR /build
 
 RUN apk update && \
