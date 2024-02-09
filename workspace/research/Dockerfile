@@ -24,7 +24,7 @@ ENV CHOWNUSER "master:${USER}"
 
 RUN addgroup -S ${USER} && \
     adduser -S master -G ${USER} && \
-    chown -R ${CHOWNUSER} research
+    chown -R ${CHOWNUSER} /research
 
 COPY --chown=${CHOWNUSER} --from=builder /build/target/${USER}/release/research ./${USER}/research 
 COPY --chown=${CHOWNUSER} --from=builder /build/target/front/wasm32-unknown-unknown/release/research.wasm ./front/research.wasm
