@@ -1,7 +1,4 @@
-# Rust言語の準備をはじめる
-FROM rustlang/rust:nightly-debian as builder
-
-# 開発用USERを作る
+FROM ubuntu:22.04
 
 ARG USERNAME=utakata
 ARG USER_UID=1000
@@ -22,6 +19,11 @@ RUN apk update && \
   pkgconfig libressl-dev musl-dev 
 
 
+# Rust Install 
+RUN curl https://sh.rustup.rs -sSf | sh
+ENV PATH="/root/.cargo/bin:$PATH"
+RUN rustup default nightly
+
 RUN npm install -g sass
 
 # cargo-leptosを入れる
@@ -31,4 +33,4 @@ RUN curl --proto '=https' --tlsv1.2 -LsSf https://github.com/leptos-rs/cargo-lep
 RUN rustup target add wasm32-unknown-unknown
 
 WORKDIR /workspace 
-COPY . . 
+COPY . .
