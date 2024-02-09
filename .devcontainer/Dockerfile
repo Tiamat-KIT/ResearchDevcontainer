@@ -7,8 +7,6 @@ ARG USERNAME=utakata
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
-# apt-get (updateも)は動かないらしい。
-
 RUN apt-get update && \
     group add --gid $USER_GID $USERNAME \
     && user add -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
