@@ -20,7 +20,7 @@ FROM rustlang/rust:nightly-alpine as runner
 
 WORKDIR /app
 
-COPY --from=builder /work/target/release/ /app/
+COPY --from=builder /work/target/release/research /app/
 COPY --from=builder /work/target/site /app/site
 COPY --from=builder /work/Cargo.toml /app/
 
