@@ -1,10 +1,13 @@
 # Get started with a build env with Rust nightly
-FROM rust:latest AS builder
+FROM ubuntu:trusty AS builder
 WORKDIR /build
 
 RUN apk-get update && \
     apk-get upgrade --no-cache && \
     apk-get install --no-cache bash curl libc-dev binaryen pkgconfig libressl-dev musl-dev 
+
+RUN curl https://sh.rustup.rs -sSf | sh
+ENV PATH="/root/.cargo/bin:$PATH"
 
 RUN rustup default nightly 
 RUN rustup target add wasm32-unknown-unknown
@@ -15,8 +18,6 @@ RUN rustup target add wasm32-unknown-unknown
 
 COPY . .
 RUN cargo leptos build --release
-
-FROM alpine:3.18 AS runner
 WORKDIR /research
 
 ENV USER "utakata"
