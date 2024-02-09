@@ -1,5 +1,5 @@
 # Rust言語の準備をはじめる
-FROM rustlang/rust:nightly-alpine as builder
+FROM rustlang/rust:nightly-debian as builder
 
 # 開発用USERを作る
 
@@ -7,8 +7,10 @@ ARG USERNAME=utakata
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
-RUN apt-get update \
-    && groupadd --gid $USER_GID $USERNAME \
+# apt-get (updateも)は動かないらしい。
+
+RUN apt-get update && \
+    group add --gid $USER_GID $USERNAME \
     && user add -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
     && apt-get install -y sudo \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
