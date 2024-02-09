@@ -8,7 +8,7 @@ RUN apk update && \
 
 RUN rustup default nightly 
 RUN rustup target add wasm32-unknown-unknown
-RUN npm install -g sass
+# RUN npm install -g sass
 RUN cargo install --locked cargo-leptos
 # Add the WASM target
 RUN rustup target add wasm32-unknown-unknown
