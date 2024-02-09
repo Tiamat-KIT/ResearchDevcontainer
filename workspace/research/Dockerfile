@@ -2,9 +2,9 @@
 FROM rust:latest AS builder
 WORKDIR /build
 
-RUN apk update && \
-    apk upgrade --no-cache && \
-    apk add --no-cache bash curl libc-dev binaryen pkgconfig libressl-dev musl-dev 
+RUN apk-get update && \
+    apk-get upgrade --no-cache && \
+    apk-get install --no-cache bash curl libc-dev binaryen pkgconfig libressl-dev musl-dev 
 
 RUN rustup default nightly 
 RUN rustup target add wasm32-unknown-unknown
