@@ -24,13 +24,10 @@ RUN curl https://sh.rustup.rs -sSf | sh
 ENV PATH="/root/.cargo/bin:$PATH"
 RUN rustup default nightly
 
-RUN npm install -g sass
-
-# cargo-leptosを入れる
-RUN curl --proto '=https' --tlsv1.2 -LsSf https://github.com/leptos-rs/cargo-leptos/releases/download/0.2.5/cargo-leptos-installer.sh | sh
-
-# WASM出力のためのものを入れる
 RUN rustup target add wasm32-unknown-unknown
+RUN cargo install --locked trunk
+RUN cargo install wasm-pack
+
 
 WORKDIR /workspace 
 COPY . .
