@@ -30,4 +30,4 @@ RUN cargo install wasm-pack
 
 
 WORKDIR /workspace 
-COPY workspace .
+COPY /workspace /workspace
