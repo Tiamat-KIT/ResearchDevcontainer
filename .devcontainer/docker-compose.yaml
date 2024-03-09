@@ -1,7 +1,6 @@
 version: '3'
 services:
   utakata-research:
-    container_name: 'utakata-research'
     hostname: 'utakata'
     build: .
     restart: always
