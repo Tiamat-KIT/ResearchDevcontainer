@@ -1,0 +1,1 @@
+cargo new --lib yew-app && cd yew-app
